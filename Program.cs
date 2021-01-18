@@ -40,10 +40,25 @@ namespace BMICalculator
                 isValid = false;
 
                 // if it's metric, go through this
-                if (input == "metric")
+                if (unit == "metric")
                 {
                     // get their height in centimeters
                     // use another loop to validate that they entered a valid number in acceptable range
+                    Console.WriteLine();
+                    Console.WriteLine("What is your height in centimeters?");
+                    while (!isValid)
+                    {
+                        Console.WriteLine("(Please enter a valid number of centimeters - no unit)");
+                        input = Console.ReadLine();
+                        if (validator.IsValidHeightCm(input))
+                        { 
+                            isValid = true; // set valid to true
+                            height = Convert.ToDouble(input); // it's safe to convert now, so store in height
+                        }
+                    }
+
+                    // set isValid back to false for the next time it's needed
+                    isValid = false;
 
                     // get their weight in kg
                     // use another loop to validate that they entered a valid number in acceptable range
