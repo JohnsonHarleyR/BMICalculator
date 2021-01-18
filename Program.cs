@@ -21,6 +21,7 @@ namespace BMICalculator
                 double height = 0;
                 double weight = 0;
                 double bmi = 0;
+                string bmiString = "";
 
                 string input = "";
                 bool isValid = false;
@@ -150,10 +151,14 @@ namespace BMICalculator
                 }
 
                 // calculate the BMI
+                bmi = CalculateBmi(height, weight);
+                Console.WriteLine(bmi); // test
 
                 // calculate if the range is healthy
 
                 // display the results
+                Console.WriteLine();
+                Console.WriteLine($"Your BMI is {string.Format("{0:F1}", bmi)}.");
 
                 // set isValid to false
                 isValid = false;
@@ -191,13 +196,17 @@ namespace BMICalculator
         }
 
         // calculate their bmi - bmi = m / h^2
+        // after bmi is calculated, multiply it by 10^4
         public static double CalculateBmi(double height, double weight)
         {
+            //Console.WriteLine($"Height: {height} Weight: {weight}");
+            //Console.WriteLine($"Height squared: {Math.Pow(height, 2)}");
             double temp = Math.Pow(height, 2);
-            return weight / temp;
+            return (weight / temp) * 10000; // 10^4
         }
 
         // calculate what health range their bmi is in
+       
 
 
     }
