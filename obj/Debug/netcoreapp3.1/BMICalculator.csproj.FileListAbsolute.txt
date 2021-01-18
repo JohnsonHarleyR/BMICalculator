@@ -1,0 +1,13 @@
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\bin\Debug\netcoreapp3.1\BMICalculator.exe
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\bin\Debug\netcoreapp3.1\BMICalculator.deps.json
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\bin\Debug\netcoreapp3.1\BMICalculator.runtimeconfig.json
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\bin\Debug\netcoreapp3.1\BMICalculator.runtimeconfig.dev.json
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\bin\Debug\netcoreapp3.1\BMICalculator.dll
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\bin\Debug\netcoreapp3.1\BMICalculator.pdb
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.csprojAssemblyReference.cache
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.AssemblyInfoInputs.cache
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.AssemblyInfo.cs
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.csproj.CoreCompileInputs.cache
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.dll
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.pdb
+C:\Users\Business\source\repos\BMICalculator\BMICalculator\obj\Debug\netcoreapp3.1\BMICalculator.genruntimeconfig.cache

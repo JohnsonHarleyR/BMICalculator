@@ -17,18 +17,24 @@ namespace BMICalculator
             while (true) // keep going unless the loop is broken 
             {
                 // variables
-                string unit;
-                double height;
-                double weight;
-                double bMI;
+                string unit = "";
+                double height = 0;
+                double weight = 0;
+                double bMI = 0;
 
-                string input;
+                string input = "";
                 bool isValid = false;
 
                 // first ask if they want to enter metric or standard
                 // keep looping until they give a valid answer
+                Console.WriteLine();
+                Console.WriteLine("Would you like to enter metric or standard measurements?");
                 while (!isValid)
-                { }
+                {
+                    Console.WriteLine("(Please enter 'metric' or 'standard')");
+                    unit = Console.ReadLine();
+                    if (validator.IsValidMetricStandard(unit)) { isValid = true; }
+                }
 
                 // set isValid back to false for the next time it's needed
                 isValid = false;
@@ -65,6 +71,26 @@ namespace BMICalculator
                 }
 
                 // calculate the BMI
+
+                // calculate if the range is healthy
+
+                // display the results
+
+                // set isValid to false
+                isValid = false;
+
+                // ask if they want to calculate again
+                Console.WriteLine();
+                Console.WriteLine("Would you like to calculate another BMI?");
+                while (!isValid)
+                {
+                    Console.WriteLine("(Please enter 'yes' or 'no')");
+                    input = Console.ReadLine();
+                    if (validator.IsValidYesNo(input)) { isValid = true; }
+                }
+
+                // if the answer was 'no', break the loop - ignore case
+                if (input.Equals("no", StringComparison.OrdinalIgnoreCase)) { break; }
 
             }
 
