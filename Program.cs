@@ -4,7 +4,7 @@ namespace BMICalculator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // variables
             Validator validator = new Validator();
@@ -20,7 +20,7 @@ namespace BMICalculator
                 string unit = "";
                 double height = 0;
                 double weight = 0;
-                double bmi = 0;
+                double bmi;
 
                 string input = "";
                 bool isValid = false;
@@ -76,7 +76,7 @@ namespace BMICalculator
                     }
 
                     // set isValid back to false for the next time it's needed
-                    isValid = false;
+                    //isValid = false;
 
                 }
                 // else if it's standard, go through this
@@ -138,7 +138,7 @@ namespace BMICalculator
                     }
 
                     // set isValid back to false for the next time it's needed
-                    isValid = false;
+                    //isValid = false;
 
                     // convert height to metric
                     height = ConvertInches(height);
