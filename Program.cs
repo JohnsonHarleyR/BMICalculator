@@ -28,7 +28,7 @@ namespace BMICalculator
                 // first ask if they want to enter metric or standard
                 // keep looping until they give a valid answer
                 Console.WriteLine();
-                Console.WriteLine("Would you like to enter metric or standard measurements?");
+                Console.WriteLine("Use metric or standard measurements?");
                 while (!isValid)
                 {
                     Console.WriteLine("(Please enter 'metric' or 'standard')");
@@ -69,13 +69,43 @@ namespace BMICalculator
                 {
                     // get their height in feet
                     // use another loop to validate that they entered a valid number in acceptable range
+                    Console.WriteLine();
+                    Console.WriteLine("What is your height in feet? (Inches will come next.)");
+                    while (!isValid)
+                    {
+                        Console.WriteLine("(Please enter a valid number of feet - no unit)");
+                        input = Console.ReadLine();
+                        if (validator.IsValidHeightFeet(input))
+                        {
+                            isValid = true; // set valid to true
+                            height = Convert.ToDouble(input); // it's safe to convert now, so store in height
+                            // multiply the height by 12 to convert to inches
+                            height *= 12;
+                        }
+                    }
 
-                    // multiply the feet by 12 to add to their height
+                    // set isValid back to false for the next time it's needed
+                    isValid = false;
 
                     // get the rest of the inches in their height
                     // use another loop to validate that they entered a valid number in acceptable range
+                    Console.WriteLine();
+                    Console.WriteLine("How many inches?");
+                    while (!isValid)
+                    {
+                        Console.WriteLine("(Please enter a valid number of inches - no unit)");
+                        input = Console.ReadLine();
+                        if (validator.IsValidHeightInches(input))
+                        {
+                            isValid = true; // set valid to true
+                            height += Convert.ToDouble(input); // it's safe to convert now, so store in height
+                                                               // by adding it
+                        }
+                    }
+                    //Console.WriteLine($"{height} inches"); // test
 
-                    // add the final inches to their height
+                    // set isValid back to false for the next time it's needed
+                    isValid = false;
 
                     // get their weight in pounds
                     // use another loop to validate that they entered a valid number in acceptable range

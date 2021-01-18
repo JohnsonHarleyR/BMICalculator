@@ -9,7 +9,49 @@ namespace BMICalculator
         // methods to check validity
 
 
-        // did they enter a valid number for feet and inches for height?
+        // did they enter a valid number for feet? - shortest human 1 ft 10 in, tallest 8 ft, 11.1 in
+        public bool IsValidHeightFeet(string input)
+        {
+            try // if it can be converted to a double, then check if it's in range
+            {
+                double number = Convert.ToDouble(input);
+                if (number >= 1 && number < 9) // now see if the number is in range
+                {
+                    return true;
+                }
+                else // if it's not in range, it's not valid so return false
+                {
+                    return false;
+                }
+            }
+            // otherwise, return false because it's not a number
+            catch (Exception) // HACK it doesn't want to let me write "Exception ex"
+            {
+                return false;
+            }
+        }
+
+        // did they enter a valid number for inches?
+        public bool IsValidHeightInches(string input)
+        {
+            try // if it can be converted to a double, then check if it's in range
+            {
+                double number = Convert.ToDouble(input);
+                if (number >= 0 && number < 12) // now see if the number is in range
+                {
+                    return true;
+                }
+                else // if it's not in range, it's not valid so return false
+                {
+                    return false;
+                }
+            }
+            // otherwise, return false because it's not a number
+            catch (Exception) // HACK it doesn't want to let me write "Exception ex"
+            {
+                return false;
+            }
+        }
 
         // did they enter a valid number for cm in range? - tallest man is 251 cm, shortest is 54.6 cm
         public bool IsValidHeightCm(string input)
