@@ -20,7 +20,7 @@ namespace BMICalculator
                 string unit = "";
                 double height = 0;
                 double weight = 0;
-                double bMI = 0;
+                double bmi = 0;
 
                 string input = "";
                 bool isValid = false;
@@ -62,6 +62,21 @@ namespace BMICalculator
 
                     // get their weight in kg
                     // use another loop to validate that they entered a valid number in acceptable range
+                    Console.WriteLine();
+                    Console.WriteLine("What is your weight in kilograms?");
+                    while (!isValid)
+                    {
+                        Console.WriteLine("(Please enter a valid number of kilograms - no unit)");
+                        input = Console.ReadLine();
+                        if (validator.IsValidWeightKg(input))
+                        {
+                            isValid = true; // set valid to true
+                            weight = Convert.ToDouble(input); // it's safe to convert now, so store in height
+                        }
+                    }
+
+                    // set isValid back to false for the next time it's needed
+                    isValid = false;
 
                 }
                 // else if it's standard, go through this
@@ -109,10 +124,29 @@ namespace BMICalculator
 
                     // get their weight in pounds
                     // use another loop to validate that they entered a valid number in acceptable range
+                    Console.WriteLine();
+                    Console.WriteLine("What is your weight in pounds?");
+                    while (!isValid)
+                    {
+                        Console.WriteLine("(Please enter a valid number of pounds - no unit)");
+                        input = Console.ReadLine();
+                        if (validator.IsValidWeightIbs(input))
+                        {
+                            isValid = true; // set valid to true
+                            weight = Convert.ToDouble(input); // it's safe to convert now, so store in height
+                        }
+                    }
+
+                    // set isValid back to false for the next time it's needed
+                    isValid = false;
 
                     // convert height to metric
+                    height = ConvertInches(height);
 
                     // convert weight to metric
+                    weight = ConvertPounds(weight);
+
+                    //Console.WriteLine($"Height: {height} Weight: {weight}"); // test
                 }
 
                 // calculate the BMI
@@ -145,13 +179,26 @@ namespace BMICalculator
         // methods
 
         // convert inches to centimeters
+        public static double ConvertInches(double number) // 1 inch = 2.54 cm
+        {
+            return number * 2.54;
+        }
 
         // convert pounds to kg
+        public static double ConvertPounds(double number) // divide by about 2.205
+        {
+            return number / 2.205;
+        }
 
-        // calculate their bmi
+        // calculate their bmi - bmi = m / h^2
+        public static double CalculateBmi(double height, double weight)
+        {
+            double temp = Math.Pow(height, 2);
+            return weight / temp;
+        }
 
         // calculate what health range their bmi is in
 
-        
+
     }
 }
