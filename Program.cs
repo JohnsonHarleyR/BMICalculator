@@ -21,7 +21,6 @@ namespace BMICalculator
                 double height = 0;
                 double weight = 0;
                 double bmi = 0;
-                string bmiString = "";
 
                 string input = "";
                 bool isValid = false;
@@ -151,17 +150,21 @@ namespace BMICalculator
                 }
 
                 // calculate the BMI
-                bmi = CalculateBmi(height, weight);
-                Console.WriteLine(bmi); // test
+                bmi = Math.Round(CalculateBmi(height, weight), 1); // rounded to make comparing ranges easier
+               // Console.WriteLine($"Test {bmi}"); // test
 
-                // calculate if the range is healthy
 
                 // display the results
                 Console.WriteLine();
-                Console.WriteLine($"Your BMI is {string.Format("{0:F1}", bmi)}.");
+                Console.WriteLine($"Your BMI is {bmi}.");
+                //Console.WriteLine($"Your BMI is {string.Format("{0:F1}", bmi)}.");
+                // calculate if the range is healthy and show
+                Console.WriteLine($"This is considered to be medically {CalculateHealth(bmi)}.");
 
                 // set isValid to false
                 isValid = false;
+
+
 
                 // ask if they want to calculate again
                 Console.WriteLine();
@@ -206,7 +209,17 @@ namespace BMICalculator
         }
 
         // calculate what health range their bmi is in
-       
+        public static string CalculateHealth(double bmi)
+        {
+            // underweight < 18.5; healthy < 25; overweight < 30; obese > 30
+            if (bmi < 18.5)
+            { return "underweight"; }
+            else if (bmi < 25)
+            { return "healthy"; }
+            else if (bmi < 30)
+            { return "overweight"; }
+            else { return "obese"; }
+        }
 
 
     }
